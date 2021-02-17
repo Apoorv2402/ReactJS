@@ -3,37 +3,32 @@ import './App.css';
 import Users from './Components/Users';
 
 function App() {
-  const [text, setText] = useState();
-  const [id, setId] = useState();
-  const [show, setShow] = useState(false);
 
+  const [name,setName] = useState('');
+  const [tnc,setTnc] = useState(false);
+  const [plan,setPlan] = useState('');
 
-  function updatetext(e) {
-    let date = new Date();
-    setId(date.getTime());
-    setText(e.target.value)
-    setShow(false)
+  function getFormData(e) {
+    e.preventDefault()
+    console.log(name,tnc,plan)
+    
   }
-  function clearFunction() {
-    setText(null);
-    setId(null);
-
-  }
-
-  console.log(text);
-  console.log(show)
-  console.log(id)
-  return (
+;  return (
     <div className="App">
-      <br /><br /><br /><br />
-      <input type="text" placeholder="Enter Text" onChange={updatetext} ></input><br /><br />
-      <button onClick={() => setShow(!show)}>
-        {show ? "Hide" : "Show"}
-      </button>
-      <button onClick={clearFunction} >Clear</button>
 
-        {show ? <Users name={text} userid={id}/> : null}
-      
+  <form onSubmit={getFormData}>
+    <h3>Form Handling in React</h3>
+    <input type="text" name="name" placeholder="Enter Username" onChange={(e)=>setName(e.target.value)}></input><br />
+    <label>Choose Plan:</label>
+    <span><select onChange={(e)=>setPlan(e.target.value)}>
+      <option>Basic</option>
+      <option>Standard</option>
+      <option >Premium</option>
+    </select></span>
+    <br />
+    <input id="checkbox" type="checkbox"onChange={(e)=>setTnc(e.target.checked)}></input><span>Accept all the Terms and conditions</span>
+  <button type="submit" >SignUp</button>
+  </form>
     </div>
   );
 }
