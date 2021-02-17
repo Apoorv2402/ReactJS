@@ -7,11 +7,24 @@ function App() {
   const [name,setName] = useState('');
   const [tnc,setTnc] = useState(false);
   const [plan,setPlan] = useState('');
+  const [newname,setNewname] = useState('');
+  const [newplan,setNewplan] = useState('');
+
 
   function getFormData(e) {
     e.preventDefault()
+    if(tnc === true){
     console.log(name,tnc,plan)
-    
+    setNewname(name)
+    setNewplan(plan)
+    alert('User added succesfully')
+    }else{
+      alert('Agree to T&C`s to continue')
+    }
+  }
+  function deleteUser(e) {
+    setNewname(null)
+    setNewplan(null)
   }
 ;  return (
     <div className="App">
@@ -29,6 +42,10 @@ function App() {
     <input id="checkbox" type="checkbox"onChange={(e)=>setTnc(e.target.checked)}></input><span>Accept all the Terms and conditions</span>
   <button type="submit" >SignUp</button>
   </form>
+  <div>
+
+  <Users name={newname} plan={newplan} deleteUser={deleteUser} />
+  </div>
     </div>
   );
 }

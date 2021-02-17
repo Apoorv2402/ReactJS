@@ -1,21 +1,20 @@
 import React, { Component,useState } from 'react'
 
 function Users(props) {
+console.log(props)
     const mystyle = {
         border: "2px solid black",
-        color: "white",
         width: "300px",
         margin: "20px auto",
-        backgroundColor: "Gray",
         padding: "10px",
         fontFamily: "Arial"
     };
-    // const{name, userid} = props;
+    const{name, plan} = props;
     return (
         <div style={mystyle}>
-            <h1>New User Added ...!</h1>
-            <h3>Name: {props.name}</h3>
-            <h3>User ID: {props.userid}</h3>
+            <h3>Name: {name}</h3>
+            <h3>Plan: {plan}</h3>
+            <button style={{backgroundColor:"red", width:"max-content", padding:"3px", margin:"3px 20px"}} onClick={props.deleteUser}>Delete user</button>
         </div>
     )
 
