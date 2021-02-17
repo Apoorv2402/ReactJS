@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component,useState } from 'react'
 
 function Users(props) {
     const mystyle = {
@@ -10,11 +10,12 @@ function Users(props) {
         padding: "10px",
         fontFamily: "Arial"
     };
+    // const{name, userid} = props;
     return (
         <div style={mystyle}>
             <h1>New User Added ...!</h1>
-            <h3> Name : {props.name}</h3>
-            <h3> User ID: {props.userid}</h3>
+            <h3>Name: {props.name}</h3>
+            <h3>User ID: {props.userid}</h3>
         </div>
     )
 

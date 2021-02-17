@@ -7,23 +7,33 @@ function App() {
   const [id, setId] = useState();
   const [show, setShow] = useState(false);
 
- 
-  function updatetext(val) {
+
+  function updatetext(e) {
     let date = new Date();
-    setId(val.target.value + date.getTime());
-    setText({name: val.target.value})
+    setId(date.getTime());
+    setText(e.target.value)
     setShow(false)
   }
+  function clearFunction() {
+    setText(null);
+    setId(null);
 
-console.log(text);
-console.log(show)
-console.log(id)
+  }
+
+  console.log(text);
+  console.log(show)
+  console.log(id)
   return (
     <div className="App">
-      <h1> Get Input Box Value !</h1>
+      <br /><br /><br /><br />
       <input type="text" placeholder="Enter Text" onChange={updatetext} ></input><br /><br />
-      <button onClick={()=>setShow(true)} >Add new User</button>
-        <Users name = {text} userid = {id}/>      
+      <button onClick={() => setShow(!show)}>
+        {show ? "Hide" : "Show"}
+      </button>
+      <button onClick={clearFunction} >Clear</button>
+
+        {show ? <Users name={text} userid={id}/> : null}
+      
     </div>
   );
 }
