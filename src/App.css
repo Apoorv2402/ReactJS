@@ -2,40 +2,9 @@
   box-sizing: border-box;
   margin: 10px 10px;
   padding: 0;
-
-}
-form {
-  width: 70vw;
-  height: fit-content;
-  margin: 5px auto;
   text-align: center;
-  border: 1.5px solid black;
-  box-shadow: 1px 1px black;
-  border-radius: 3px;
 }
-
-form h3 {
-  text-align: center;
-  font-size: 22px;
-  padding-top: 5%;
-  padding-bottom: 5%;
-}
-form select {
-  display: inline-block;
-  margin-left: 10px;
-  width: 40%;
-}
-form input {
-  width: 65%;
-  margin-bottom: 15px;
-}
-#checkbox {
-  width: max-content;
-  margin: 15px 0%;
-}
-button {
-  width: fit-content;
-  display: block;
-  padding: 3px 5px;
-  margin: 15px auto;
+.App{
+  display: flex;
+  
 }
