@@ -1,11 +1,12 @@
-*{
+* {
   box-sizing: border-box;
-  margin: 0;
+  margin: 10px 10px;
   padding: 0;
+
 }
-form{
+form {
   width: 70vw;
-  height : fit-content;
+  height: fit-content;
   margin: 5px auto;
   text-align: center;
   border: 1.5px solid black;
@@ -13,29 +14,28 @@ form{
   border-radius: 3px;
 }
 
-form h3{
+form h3 {
   text-align: center;
   font-size: 22px;
   padding-top: 5%;
   padding-bottom: 5%;
 }
-form select{
+form select {
   display: inline-block;
   margin-left: 10px;
   width: 40%;
 }
-form input{
+form input {
   width: 65%;
   margin-bottom: 15px;
 }
-#checkbox{
+#checkbox {
   width: max-content;
   margin: 15px 0%;
 }
-form button{
+button {
   width: fit-content;
   display: block;
   padding: 3px 5px;
   margin: 15px auto;
-
 }
